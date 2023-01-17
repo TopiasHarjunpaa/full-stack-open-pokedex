@@ -1,5 +1,11 @@
 #!/bin/bash
 
-echo "Hello from shell script"
+URL="https://full-stack-open-pokedex-tha.fly.dev/health"
+content=$(curl -s $URL)
 
-exit 1 # exit status 1 means that the script "fails"
+if [ "$content" != "ok" ]; then
+  echo "Fail"
+  exit 1
+fi
+echo "Success"
+exit 0

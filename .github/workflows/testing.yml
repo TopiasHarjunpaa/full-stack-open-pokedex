@@ -16,5 +16,10 @@ jobs:
           JOINED: ${{ join(github.event.commits.*.message, ' ') }}
           CONTAINS: ${{ contains(join(github.event.commits.*.message, ' '), '#skip') }}
         run: echo "$COMMIT_MESSAGES"
+      - name: commit messages
+        env:
+          COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+          JOINED: ${{ join(github.event.commits.*.message, ' ') }}
+          CONTAINS: ${{ contains(join(github.event.commits.*.message, ' '), '#skip') }}
         run: echo "$JOINED"
         run: echo "$CONTAINS"

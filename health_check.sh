@@ -8,4 +8,4 @@ if [ "$content" != "ok" ]; then
   exit 1
 fi
 echo "Success"
-exit 0
+exit 1

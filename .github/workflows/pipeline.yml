@@ -46,7 +46,7 @@ jobs:
         if: success()
         with:
           severity: info
-          details: Test Succeeded!
+          details: A new version of Pokedex deployed to https://full-stack-open-pokedex-tha.fly.dev/
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       - name: build failure
         uses: rjstone/discord-webhook-notify@v1
